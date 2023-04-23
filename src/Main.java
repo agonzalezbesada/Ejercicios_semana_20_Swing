@@ -7,7 +7,10 @@ public class Main {
         JFrame ventana = new JFrame();
 
         ventana.setBounds(250,70,1600,900);
+        ventana.setTitle("Liga (GRUPO B)");
         ventana.setResizable(false); // Impedimos que pueda ser redimensionada
+
+        ventana.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 
         // Etiqueta superior
         JLabel etiqueta1 = new JLabel();
@@ -52,10 +55,21 @@ public class Main {
         botonSalir.setLabel("Salir");
         botonSalir.setBounds(20,560,180,50);
 
+        // Tabla
 
+        String[] campos = {"Nombre", "Partidos Jugados", "Ganados", "Empates", "Derrotas", "Puntos"};
 
+        Object[][] registros = {
+                {"Dark", "5", "5", "0", "0", "15"},
+                {"Serral", "5", "4", "0", "1", "12"},
+                {"INnoVation", "5", "3", "0", "2", "9"},
+                {"TIME", "5", "2", "0", "3", "6"},
+                {"Bunny", "5", "1", "0", "4", "3"},
+                {"SpeCial", "5", "0", "0", "5", "0"}};
 
-
+        JTable tabla = new JTable(registros, campos); // Instanciamos la tabla e introducirmos los datos
+        tabla.setBounds(500, 120, 600, 600);
+        tabla.setRowHeight(100);
 
 
 
@@ -71,6 +85,8 @@ public class Main {
         ventana.add(botonSiguienteJornada);
         ventana.add(botonSimulacionCompleta);
         ventana.add(botonSalir);
+
+        ventana.add(tabla);
 
         ventana.setVisible(true); // Hacemos visible la ventana
 
