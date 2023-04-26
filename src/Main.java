@@ -1,4 +1,5 @@
 import javax.swing.*;
+import javax.swing.table.JTableHeader;
 import java.awt.*;
 
 public class Main {
@@ -71,7 +72,9 @@ public class Main {
         tabla.setBounds(500, 120, 600, 600);
         tabla.setRowHeight(100);
 
-
+        JTableHeader cabecera = tabla.getTableHeader(); // Instanciamos la cabecera
+        cabecera.setBounds(500,80,600,40); // la ponemos encima de la tabla
+        tabla.setTableHeader(cabecera); // Añadimos la cabecera a la tabla
 
         ventana.setLayout(null); // Eliminamos el layout por defecto
 
@@ -86,11 +89,10 @@ public class Main {
         ventana.add(botonSimulacionCompleta);
         ventana.add(botonSalir);
 
-        ventana.add(tabla);
+        ventana.add(tabla.getTableHeader()); // Añadimos primero el header
+        ventana.add(tabla); // Añadimos la tabla
 
         ventana.setVisible(true); // Hacemos visible la ventana
-
-
 
     }
 }
