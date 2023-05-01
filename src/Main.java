@@ -1,6 +1,8 @@
 import javax.swing.*;
 import javax.swing.table.JTableHeader;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 public class Main {
     public static void main(String[] args) {
@@ -96,6 +98,13 @@ public class Main {
 
         Button botonSalir = new Button();
         botonSalir.setLabel("Salir");
+        // EJERCICIO 2
+        botonSalir.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                System.exit(0);
+            }
+        });
         gbc.gridx = 0;
         gbc.gridy = 7;
         gbc.weighty = 1;
