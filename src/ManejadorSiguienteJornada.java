@@ -1,9 +1,12 @@
+import javax.swing.*;
+import java.awt.event.ActionEvent;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 
-public class ManejadorJugarLiga implements MouseListener {
+public class ManejadorSiguienteJornada implements MouseListener {
     @Override
     public void mouseClicked(MouseEvent e) {
+        System.out.println("Se va a proceder a simular una jornada");
     }
 
     @Override
@@ -18,7 +21,7 @@ public class ManejadorJugarLiga implements MouseListener {
 
     @Override
     public void mouseEntered(MouseEvent e) {
-        System.out.println("Al hacer click en este botón se simulará una liga al completo");
+
     }
 
     @Override

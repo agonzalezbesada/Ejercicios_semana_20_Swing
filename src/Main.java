@@ -54,13 +54,14 @@ public class Main {
 
         // Botones
 
-        ManejadorNuevaLiga botonLiga = new ManejadorNuevaLiga();
-        ManejadorJugarLiga botonJugar = new ManejadorJugarLiga();
+        ManejadorNuevaLiga accionLiga = new ManejadorNuevaLiga();
+        ManejadorJugarLiga accionJugar = new ManejadorJugarLiga();
+        ManejadorSiguienteJornada accionSiguiente = new ManejadorSiguienteJornada();
 
         Button botonNuevaLiga = new Button();
         botonNuevaLiga.setLabel("Nueva Liga");
         // EJERCICIO 3
-        botonNuevaLiga.addActionListener(botonLiga);
+        botonNuevaLiga.addActionListener(accionLiga);
         gbc.gridx = 0;
         gbc.gridy = 3;
         gbc.weighty = 1;
@@ -72,7 +73,7 @@ public class Main {
         Button botonJugarLiga = new Button();
         botonJugarLiga.setLabel("Jugar Liga");
         // EJERCICIO 4
-        botonJugarLiga.addMouseListener(botonJugar);
+        botonJugarLiga.addMouseListener(accionJugar);
         gbc.gridx = 0;
         gbc.gridy = 4;
         gbc.weighty = 1;
@@ -82,8 +83,9 @@ public class Main {
         ventana.add(botonJugarLiga, gbc);
 
         Button botonSiguienteJornada = new Button();
-        botonSiguienteJornada.setEnabled(false);
         botonSiguienteJornada.setLabel("Siguiente jornada");
+        // EJERCICIO 5
+        botonSiguienteJornada.addMouseListener(accionSiguiente);
         gbc.gridx = 0;
         gbc.gridy = 5;
         gbc.weighty = 1;
