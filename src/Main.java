@@ -54,8 +54,12 @@ public class Main {
 
         // Botones
 
+        ManejadorNuevaLiga botonLiga = new ManejadorNuevaLiga();
+
         Button botonNuevaLiga = new Button();
         botonNuevaLiga.setLabel("Nueva Liga");
+        // EJERCICIO 3
+        botonNuevaLiga.addActionListener(botonLiga);
         gbc.gridx = 0;
         gbc.gridy = 3;
         gbc.weighty = 1;
