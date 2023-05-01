@@ -13,23 +13,32 @@ public class Main {
 
         ventana.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         ventana.setLayout(null);
-        // EJERCICIO 1 (1/2)
+        // EJERCICIO 1
         GridBagLayout gridBag = new GridBagLayout();
         GridBagConstraints gbc = new GridBagConstraints();
         ventana.setLayout(gridBag);
 
         // Etiqueta superior
         JLabel etiqueta1 = new JLabel();
-        gbc.gridx = 0;
-        gbc.gridy = 0;
-        ventana.add(etiqueta1, gbc);
         etiqueta1.setText("Probando la librería Swing en Java");
+        gbc.gridx = 1;
+        gbc.gridy = 0;
+        gbc.weighty = 0;
+        gbc.weightx = 4;
+        gbc.fill = GridBagConstraints.NONE;
+        gbc.anchor = GridBagConstraints.WEST;
+        ventana.add(etiqueta1, gbc);
+
 
         // Menú + Menús
 
         JMenuBar barraMenus = new JMenuBar();
         gbc.gridx = 0;
         gbc.gridy = 1;
+        gbc.weighty = 4;
+        gbc.weightx = 0;
+        gbc.fill = GridBagConstraints.NONE;
+        gbc.anchor = GridBagConstraints.NORTHWEST;
         ventana.add(barraMenus, gbc);
 
         JMenu menuArchivo = new JMenu("Archivo");
@@ -46,33 +55,53 @@ public class Main {
         Button botonNuevaLiga = new Button();
         botonNuevaLiga.setLabel("Nueva Liga");
         gbc.gridx = 0;
-        gbc.gridy = 2;
+        gbc.gridy = 3;
+        gbc.weighty = 1;
+        gbc.weightx = 3;
+        gbc.fill = GridBagConstraints.NONE;
+        gbc.anchor = GridBagConstraints.NORTH;
         ventana.add(botonNuevaLiga, gbc);
 
         Button botonJugarLiga = new Button();
         botonJugarLiga.setLabel("Jugar Liga");
         gbc.gridx = 0;
-        gbc.gridy = 3;
+        gbc.gridy = 4;
+        gbc.weighty = 1;
+        gbc.weightx = 3;
+        gbc.fill = GridBagConstraints.NONE;
+        gbc.anchor = GridBagConstraints.NORTH;
         ventana.add(botonJugarLiga, gbc);
 
         Button botonSiguienteJornada = new Button();
         botonSiguienteJornada.setEnabled(false);
         botonSiguienteJornada.setLabel("Siguiente jornada");
         gbc.gridx = 0;
-        gbc.gridy = 4;
+        gbc.gridy = 5;
+        gbc.weighty = 1;
+        gbc.weightx = 3;
+        gbc.fill = GridBagConstraints.NONE;
+        gbc.anchor = GridBagConstraints.NORTH;
         ventana.add(botonSiguienteJornada, gbc);
 
         Button botonSimulacionCompleta = new Button();
         botonSimulacionCompleta.setEnabled(false);
         botonSimulacionCompleta.setLabel("Simulación completa");
         gbc.gridx = 0;
-        gbc.gridy = 5;
+        gbc.gridy = 6;
+        gbc.weighty = 1;
+        gbc.weightx = 3;
+        gbc.fill = GridBagConstraints.NONE;
+        gbc.anchor = GridBagConstraints.NORTH;
         ventana.add(botonSimulacionCompleta, gbc);
 
         Button botonSalir = new Button();
         botonSalir.setLabel("Salir");
         gbc.gridx = 0;
-        gbc.gridy = 6;
+        gbc.gridy = 7;
+        gbc.weighty = 1;
+        gbc.weightx = 3;
+        gbc.fill = GridBagConstraints.NONE;
+        gbc.anchor = GridBagConstraints.NORTH;
         ventana.add(botonSalir, gbc);
 
         // Tabla
@@ -88,46 +117,31 @@ public class Main {
                 {"SpeCial", "5", "0", "0", "5", "0"}};
 
         JTable tabla = new JTable(registros, campos); // Instanciamos la tabla e introducirmos los datos
-        gbc.gridx = 0;
-        gbc.gridy = 8;
+        tabla.setRowHeight(70);
+        gbc.gridx = 1;
+        gbc.gridy = 3;
+        gbc.gridwidth = 1;
+        gbc.gridheight = 5;
+        gbc.weighty = 0;
+        gbc.weightx = 4;
+        gbc.fill = GridBagConstraints.NONE;
+        gbc.anchor = GridBagConstraints.NORTHWEST;
         ventana.add(tabla, gbc);
 
         JTableHeader cabecera = tabla.getTableHeader(); // Instanciamos la cabecera
-        gbc.gridx = 0;
-        gbc.gridy = 7;
+        gbc.gridx = 1;
+        gbc.gridy = 2;
+        gbc.gridwidth = 1;
+        gbc.gridheight = 1;
+        gbc.weighty = 2;
+        gbc.weightx = 4;
+        gbc.fill = GridBagConstraints.NONE;
+        gbc.anchor = GridBagConstraints.SOUTHWEST;
         ventana.add(tabla.getTableHeader(), gbc);
 
         tabla.setTableHeader(cabecera); // Añadimos la cabecera a la tabla
 
-
-        // Diseñamos el Layout EJERCICIO 1 (2/2)
-
-
-
-
-
-
         ventana.setVisible(true); // Hacemos visible la ventana
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
     }
 }
