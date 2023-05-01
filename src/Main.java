@@ -47,6 +47,14 @@ public class Main {
         JMenu menuAcciones = new JMenu("Acciones");
         JMenu menuAyuda = new JMenu("Ayuda");
 
+        // EJERCICIO 6
+
+        JMenuItem version = new JMenuItem("Versión");
+        JMenuItem acerca = new JMenuItem("Acerca de...");
+
+        menuAyuda.add(version);
+        menuAyuda.add(acerca);
+
         // Agregamos los menús a la barra de menús
         barraMenus.add(menuArchivo);
         barraMenus.add(menuAcciones);
