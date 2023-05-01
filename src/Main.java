@@ -52,8 +52,16 @@ public class Main {
         JMenuItem version = new JMenuItem("Versión");
         JMenuItem acerca = new JMenuItem("Acerca de...");
 
+        ManejadorVersion accionVersion = new ManejadorVersion();
+        ManejadorAcerca accionAcerca = new ManejadorAcerca();
+
+        version.addActionListener(accionVersion);
+        acerca.addActionListener(accionAcerca);
+
         menuAyuda.add(version);
         menuAyuda.add(acerca);
+
+
 
         // Agregamos los menús a la barra de menús
         barraMenus.add(menuArchivo);
